@@ -5,82 +5,83 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Vote LG + DG</title>
-
-    <!-- Main CSS -->
     <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="Console">
-  <div class="scrollback"></div>
-  <input type="text"/>
-</div>
-    
+  <div class="parent">
+    <div class="console">
+      <div class="scrollback"></div>
+      <input type="text"/>
+    </div>
+  </div>
+
     <!-- JS -->
     <script>
-       'use strict';
+     'use strict';
+      const lines = [];
+      const maxLines = 500;
+      const scrollback = document.querySelector('.scrollback');
+      const input = document.querySelector('input');
+      const errorMessages = [
+        "Not sure I understand. Try again.",
+        "Need help? Type help.",
+        "Hmmm... maybe you should email us instead."
+      ];
 
-        var lines = [];
-        var maxLines = 500;
-
-        var scrollback = document.querySelector('.scrollback');
-        var input = document.querySelector('input');
-
-        const verbs = ['go'];
-
-        function print(text, raw = false) {
-          lines.push(raw ? text : escapeHtml(text));
-          while(lines.length > maxLines) {
-            lines.shift();
-          }
-          scrollback.innerHTML = lines.join('\n');
-          scrollback.scrollTop = Math.pow(2, 30); // Firefox doesn't like Number.MAX_SAFE_INTEGER for this
+      function print(text, raw = true) { // letting people print html for now
+        lines.push(raw ? text : escapeHtml(text));
+        while(lines.length > maxLines) {
+          lines.shift();
         }
+        scrollback.innerHTML = lines.join('\n');
+        scrollback.scrollTop = Math.pow(2, 30); // Firefox doesn't like Number.MAX_SAFE_INTEGER for this
+      }
 
-        function action(text) {
-          print('\n<kbd>' + escapeHtml(text) + '</kbd>', true);
-          let [verb, noun] = text.split(' ');
-          if (!verbs.includes(verb)) {
-            print('Funny you say that.');
-            return;
-          }
-          if (verb === 'go' && noun == 'west') {
-            print('Where the skies are blue.');
-            return;
-          }
+      function printRandomError() {
+        let idx = Math.floor((Math.random() * errorMessages.length));
+        print(errorMessages[idx]);
+      }
+
+      function action(text) {
+        print('\n<kbd>' + escapeHtml(text) + '</kbd>', true);
+        let txt = text.toLowerCase();
+        if (txt.includes('who') && txt.includes('laura')) print('Laura is legendary.');
+        else if (txt.includes('who') && txt.includes('dean')) print("Dean was born in New York and loves technology. He also loves puppies and attending Deep Dish Dinners. He enjoys watching the 2017-2018 Knicks basketball team which has performed amazingly this season thus far. Why is that relevant? It's not.");
+        else if (txt === 'what is your platform' || txt === "platform" || txt === 'whats your platform' || txt === "what's your platform") print("Our goal is to hold a lot of events and buy a lot of pizza for you HTC folks. We're looking to make sure you're able to consume at least 30% of your weekly calories from pizza.");
+        else if (txt === 'help') print("Actually, we can't help you. Too bad.");
+        else printRandomError();
+      }
+      input.addEventListener('keydown', function(e) {
+        if (e.keyCode === 13 /* return */ && input.value.trim()) {
+          action(input.value.trim());
+          input.value = '';
         }
-
-        input.addEventListener('keydown', function(e) {
-          if (e.keyCode === 13 /* return */ && input.value.trim()) {
-            action(input.value.trim());
-            input.value = '';
-          }
-        });
-
-        // "escapeHtml" function borrowed from:
-        // https://github.com/janl/mustache.js/blob/master/mustache.js
-        const entityMap = {
-          '&': '&amp;',
-          '<': '&lt;',
-          '>': '&gt;',
-          '"': '&quot;',
-          "'": '&#39;',
-          '/': '&#x2F;',
-          '`': '&#x60;',
-          '=': '&#x3D;'
-        };
-        function escapeHtml (string) {
-          return String(string).replace(/[&<>"'`=\/]/g, s => entityMap[s]);
-        }
-
-        (function main() {
-          input.focus();
-          print('Hi!');
-          print('What would you like to know about?');
-        })();
+      });
+      // "escapeHtml" function borrowed from:
+      // https://github.com/janl/mustache.js/blob/master/mustache.js
+      const entityMap = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;',
+        '/': '&#x2F;',
+        '`': '&#x60;',
+        '=': '&#x3D;',
+        '&aacute;': '&aacute;',
+      };
+      function escapeHtml (string) {
+        return String(string).replace(/[&<>"'`=\/]/g, s => entityMap[s]);
+      }
+      (function main() {
+        input.focus();
+        print("Hi! We're Laura & Dean, and we're running for HTC co-prez.");
+        print('What would you like to learn more about?');
+        print("Feel free to ask questions such as 'who's Laura?' or 'what is your platform?'.");
+      })();
     </script>
-    </body>
+  </body>
 
 </html>
