@@ -49,8 +49,19 @@
         let txt = text.toLowerCase();
         if (txt.includes('who') && txt.includes('laura')) print('Laura is legendary.');
         else if (txt.includes('who') && txt.includes('dean')) print("Dean was born in New York and loves technology. He also loves puppies and attending Deep Dish Dinners. He enjoys watching the 2017-2018 Knicks basketball team which has performed amazingly this season thus far. Why is that relevant? It's not.");
-        else if (txt === 'what is your platform' || txt === "platform" || txt === 'whats your platform' || txt === "what's your platform") print("Our goal is to hold a lot of events and buy a lot of pizza for you HTC folks. We're looking to make sure you're able to consume at least 30% of your weekly calories from pizza.");
+        else if (txt.includes('what is your platform') || txt === "platform" || txt.includes("whats your platform") || txt.includes("what's your platform")) print("Our goal is to hold a lot of events and use sponsorship money to buy a lot of pizza for HTC. We're looking to make sure you're able to consume at least 30% of your weekly calories from pizza. To learn more about pizza, type pizza.");
+        else if (txt === 'pizza') print("Pizza is a yeasted flatbread typically topped with tomato sauce and cheese and baked in an oven. It is commonly topped with a selection of meats, vegetables and condiments. To learn more about where we will source pizzas, type pizza source.");
+        else if (txt === 'pizza source') print("We will personally bake organic, gluten-free pizzas in our Ford Mobility sponsored oven.");
+        else if (txt === 'wow' || txt === 'wao') print("We think this is cool, too.");
+        else if (txt === 'htc') print("Also known as the Haas Technology Club.");
+        else if (txt === 'hello' || txt === 'hi' || txt === 'hola' || txt === 'hello!' || txt === 'hi!') print("Hey there!");
+        else if (txt === 'what is this' || txt === 'what is this?' || txt === "what's this") print("This is something Laura and Dean built to tell you about our awesome campaign.");
+        else if (txt.includes('how are you')) print("Thanks for asking! I'm stuck in this box but otherwise doing well.")
         else if (txt === 'help') print("Actually, we can't help you. Too bad.");
+        else if (txt.includes('who') && txt.includes('gerardo') || txt.includes('risa') || txt.includes('mehmet') || txt.includes('noam') || txt.includes('nolan') || txt.includes('elspeth') || txt.includes('alison')) print('An awesome HTC leader from the 2018 FTMBA class.');
+        else if (txt.includes('who') && txt.includes('alicia') || txt.includes('diego') || txt.includes('khalid') || txt.includes('manav')) print('An awesome HTC leader from the 2018 FTMBA class.');
+        else if (txt.includes('who') && txt.includes('sunny') || txt.includes('mary') || txt.includes('beverly')) print('An awesome HTC leader from the 2018 FTMBA class.');
+        else if (txt.includes('who') && txt.includes('thuria') || txt.includes('nancy')) print('An awesome HTC leader from the 2019 EWMBA class.');
         else printRandomError();
       }
       input.addEventListener('keydown', function(e) {
