@@ -10,16 +10,23 @@
 
     <!-- Main CSS -->
     <link href="css/style.css" rel="stylesheet">
+</head>
 
+<body>
+  <div class="Console">
+  <div class="scrollback"></div>
+  <input type="text"/>
+</div>
+    
     <!-- JS -->
     <script>
        'use strict';
 
-        const lines = [];
-        const maxLines = 500;
+        var lines = [];
+        var maxLines = 500;
 
-        const scrollback = document.querySelector('.scrollback');
-        const input = document.querySelector('input');
+        var scrollback = document.querySelector('.scrollback');
+        var input = document.querySelector('input');
 
         const verbs = ['go'];
 
@@ -74,13 +81,6 @@
           print('What would you like to know about?');
         })();
     </script>
-</head>
-
-<body>
-  <div class="Console">
-  <div class="scrollback"></div>
-  <input type="text"/>
-</div>
-</body>
+    </body>
 
 </html>
