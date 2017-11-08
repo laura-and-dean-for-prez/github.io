@@ -30,7 +30,7 @@
         "Hmmm... maybe you should email us instead."
       ];
 
-      function print(text, raw = true) { // printing raw html for now
+      function print(text, raw = true) { // letting people print html for now
         lines.push(raw ? text : escapeHtml(text));
         while(lines.length > maxLines) {
           lines.shift();
@@ -47,16 +47,18 @@
       function action(text) {
         print('\n<kbd>' + escapeHtml(text) + '</kbd>', true);
         let txt = text.toLowerCase();
-        if (txt.includes('who') && txt.includes('laura')) print('Your new friend. Born and raised in Colombia, she loves latin music and dancing reggaeton. She loves to travel and explore, passion that is fueled by the endless possibilities technology provides.');
+        if (txt.includes('who') && txt.includes('laura')) print('Your new friend. Born and raised in Colombia, she loves latin music and dancing reggaeton. She loves to travel and explore, passion that is fueled by the endless possibilities technology provides. To learn more about Colombia, type Colombia.');
         else if ((txt.includes('quien') || txt.includes('quién')) && txt.includes('laura')) print("Laura creció en Colombia y como buena latina, le encanta el reggaeton. Su otra pasión es viajar y explorar el mundo, impulsada por las infinitas posibilidades brindadas por la tecnología.");
         else if (txt.includes('who') && txt.includes('dean')) print("Dean was born in New York and loves technology. He also loves puppies and attending Deep Dish Dinners. He enjoys watching the 2017-2018 Knicks basketball team which has performed amazingly this season thus far. Why is that relevant? It's not.");
         else if ((txt.includes('quien') || txt.includes('quién')) && txt.includes('dean')) print("Dean nació en Nueva York y es muy malo en español. También le gustan los cachorritos y las cenas de charlas profundas en Haas. Disfruta ver al equipo de basketball 2017-2018 de los Knicks, que han tenido una temporada increíble hasta ahora. Porque eso es importante? No es.");
+        else if (txt === 'Colombia') print("Colombia is a very diverse country in South America. With a population of over 50 million, Colombia offers a variety of big cities, old cities, amazing landscapes, mountains and beautiful beaches. The best part? It's people. Ranked as the 'happiest place on Earth', it really is a place you should visit. Spolier alert: Expect a trek soon!");
         else if (txt.includes('what is your platform') || txt === "platform" || txt.includes("whats your platform") || txt.includes("what's your platform")) print("Our goal is to hold a lot of events and use sponsorship money to buy a lot of pizza for HTC. We're looking to make sure you're able to consume at least 30% of your weekly calories from pizza. To learn more about pizza, type pizza.");
         else if (txt.includes('why') && txt.includes('vote') && txt.includes('you')) print("Because we’ll go #beyondyourself. We are feedback driven and want to ensure that you get the support you need from us and from HTC.");
         else if (txt === 'pizza') print("Pizza is a yeasted flatbread typically topped with tomato sauce and cheese and baked in an oven. It is commonly topped with a selection of meats, vegetables and condiments. To learn more about where we will source pizzas, type pizza source.");
         else if (txt === 'pizza source') print("We will personally bake you organic, gluten-free pizzas in our Ford Mobility sponsored oven. They will come with side dishes of machine learning and artificial intelligence.");
         else if (txt === 'wow' || txt === 'wao') print("We think this is cool, too.");
         else if (txt === 'why' || txt === 'why?') print("You tell me.");
+        else if (txt === 'what' || txt === 'what?') print("WHAAAAAAAT?!");
         else if (txt === 'who' || txt === 'who?') print("Who do you want to know about?");
         else if (txt === 'how' || txt === 'how?') print("How about you ask me a different question?");
         else if (txt === 'where' || txt === 'where?') print("At the best business school in the world.");
@@ -66,7 +68,7 @@
         else if (txt.includes('how are you')) print("Thanks for asking! I'm stuck in this box but otherwise doing well.")
         else if (txt.includes('haas') && txt.includes('facts')) print("Never thought you'd ask! Berkeley Haas was founded in 1898, as the first US business school at a public university. We currently have over 2,200 students over 6 degree programs.")
         else if (txt.includes('who are you')) print("I'm a chatbot. Duh.");
-        else if (txt === 'help') print("Try typing in some other prompts such as 'why should we vote for you?' or 'tell me some facts about Haas'.");
+        else if (txt === 'help' || txt === '/help') print("Try typing in some other prompts such as 'why should we vote for you?' or 'tell me some facts about Haas'.");
         else if (txt.includes('who') && txt.includes('gerardo') || txt.includes('risa') || txt.includes('mehmet') || txt.includes('noam') || txt.includes('nolan') || txt.includes('elspeth') || txt.includes('alison')) print('An awesome HTC leader from the 2018 FTMBA class.');
         else if (txt.includes('who') && txt.includes('alicia') || txt.includes('diego') || txt.includes('khalid') || txt.includes('manav')) print('An awesome HTC leader from the 2018 FTMBA class.');
         else if (txt.includes('who') && txt.includes('sunny') || txt.includes('mary') || txt.includes('beverly')) print('An awesome HTC leader from the 2018 FTMBA class.');
@@ -79,7 +81,8 @@
           input.value = '';
         }
       });
-      // "escapeHtml" function from https://github.com/janl/mustache.js/blob/master/mustache.js
+      // "escapeHtml" function borrowed from:
+      // https://github.com/janl/mustache.js/blob/master/mustache.js
       const entityMap = {
         '&': '&amp;',
         '<': '&lt;',
@@ -96,9 +99,9 @@
       }
       (function main() {
         input.focus();
-        print("Hi! We're Laura & Dean, and we're running for HTC co-prez.");
+        print("Hi! We're Laura & Dean, and we're running for HTC as co-presidents.");
         print('What would you like to learn more about?');
-        print("You can ask questions such as 'who's Laura?', 'what is your platform?', or 'quién es dean?'.");
+        print("You can ask questions such as 'what is your platform?', or 'quién es Laura?'.");
       })();
     </script>
   </body>
