@@ -8,14 +8,16 @@
     <title>Vote LG + DG</title>
     <link href="style.css" rel="stylesheet">
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109417007-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-      gtag('config', 'UA-109417007-1');
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-109417007-1', 'auto');
+      ga('send', 'pageview');
     </script>
 
     <!-- Import JQuery -->
@@ -91,11 +93,14 @@
         else if (txt.includes('haas') && txt.includes('facts')) print("Never thought you'd ask! Berkeley Haas was founded in 1898, as the first US business school at a public university. We currently have over 2,200 students over 6 degree programs.")
         else if (txt.includes('what') && txt.includes('blockchain')) print("Blockchain is a very strong chain of lego blocks. Most often they come in primary colors.");
         else if (txt.includes('what') && (txt.includes('ml') || txt.includes('machine learning'))) print("Machine learning is how machines learn things and help us #questionthestatusquo.");
+        else if (txt.includes('what') && (txt.includes('ai') || txt.includes('artificial intelligence'))) print("AI is how I'm talking to you. Spooky.");
         else if (txt.includes('what') && txt.includes('vision')) print("Our vision is to work hard with the rest of the leadership team to be the best technology club of all time. Will you play a part?");
+        else if (txt.includes('what') && txt.includes('background')) print("Laura is a former I-banker and industrial engineer. Dean is an ex-consultant. Both of them are incredibly excited for how technology will evolve in the coming years.");
         else if (txt.includes('what') && txt.includes('programs')) print("We want to start many programs. We want to hold more mixers to include all of the 6 Haas programs: FTMBA, EWMBA, EMBA, XMBA, NBAMBA, and AMEOBA.");
         else if ((txt.includes('what') || txt.includes('which')) && (txt.includes('company') || txt.includes('companies'))) print("We want to start partnerships with some of the top technology companies, such as UPS, Domino's Pizza, and Trader Joe's.");
         else if (txt.includes('cater') && txt.includes('need')) print("We like catering. We'll cater a lot.");
         else if (txt.includes('who are you')) print("I'm a chatbot. Duh.");
+        else if (txt.includes('are you human')) print("Not quite, but close.");
         else if (txt === 'help' || txt === '/help') print("Try typing in some other prompts such as 'why should we vote for you?', 'tell me some facts about Haas', or 'quién es laura'.");
         else if (txt.includes('who') && txt.includes('gerardo') || txt.includes('risa') || txt.includes('mehmet') || txt.includes('noam') || txt.includes('nolan') || txt.includes('elspeth') || txt.includes('alison')) print('An awesome HTC leader from the 2018 FTMBA class.');
         else if (txt.includes('who') && txt.includes('alicia') || txt.includes('diego') || txt.includes('khalid') || txt.includes('manav')) print('An awesome HTC leader from the 2018 FTMBA class.');
