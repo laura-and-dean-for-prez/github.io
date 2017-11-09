@@ -53,7 +53,7 @@
         else if ((txt.includes('quien') || txt.includes('quién')) && txt.includes('dean')) print("Dean nació en Nueva York y es muy malo en español. También le gustan los cachorritos y las cenas de charlas profundas en Haas. Disfruta ver al equipo de basketball 2017-2018 de los Knicks, que han tenido una temporada increíble hasta ahora. Porque eso es importante? No es.");
         else if (txt === 'colombia') print("Colombia is a very diverse country in South America. With a population of over 50 million, Colombia offers a variety of big cities, old cities, amazing landscapes, mountains and beautiful beaches. The best part? It's people. Ranked as the 'happiest place on Earth', it really is a place you should visit. Spolier alert: Expect a trek soon!");
         else if (txt.includes('what is your platform') || txt === "platform" || txt.includes("whats your platform") || txt.includes("what's your platform")) print("Our goal is to hold a lot of events and use sponsorship money to buy a lot of pizza for HTC. We're looking to make sure you're able to consume at least 30% of your weekly calories from pizza. To learn more about pizza, type pizza.");
-        else if (txt.includes('why') && txt.includes('vote') && txt.includes('you')) print("Because we’ll go #beyondyourself. We are feedback driven and want to ensure that you get the support you need from us and from HTC.");
+        else if (txt.includes('why') && txt.includes('vote')) print("Because we’ll go #beyondyourself. We are feedback driven and want to ensure that you get the support you need from us and from HTC.");
         else if (txt === 'pizza') print("Pizza is a yeasted flatbread typically topped with tomato sauce and cheese and baked in an oven. It is commonly topped with a selection of meats, vegetables and condiments. To learn more about where we will source pizzas, type pizza source.");
         else if (txt === 'pizza source') print("We will personally bake you organic, gluten-free pizzas in our Ford Mobility sponsored oven. They will come with side dishes of machine learning and artificial intelligence.");
         else if (txt === 'wow' || txt === 'wao') print("We think this is cool, too.");
@@ -64,15 +64,24 @@
         else if (txt === 'where' || txt === 'where?') print("At the best business school in the world.");
         else if (txt === 'htc') print("Also known as the Haas Technology Club.");
         else if (txt === 'hello' || txt === 'hi' || txt === 'hola' || txt === 'hello!' || txt === 'hi!') print("Hey there!");
+        else if (txt === 'who made this' || txt === 'who made this?') print("Laura and Dean created this.");
         else if (txt === 'what is this' || txt === 'what is this?' || txt === "what's this") print("This is something Laura and Dean built to tell you about their awesome campaign.");
         else if (txt.includes('how are you')) print("Thanks for asking! I'm stuck in this box but otherwise doing well.")
         else if (txt.includes('haas') && txt.includes('facts')) print("Never thought you'd ask! Berkeley Haas was founded in 1898, as the first US business school at a public university. We currently have over 2,200 students over 6 degree programs.")
+        else if (txt.includes('what') && txt.includes('blockchain')) print("Blockchain is a very strong chain of lego blocks. Most often they come in primary colors.")
+        else if (txt.includes('what') && (txt.includes('ML') || txt.includes('machine learning'))) print("Machine learning is how machines learn things and help us #questionthestatusquo.")
+        else if (txt.includes('what') && txt.includes('vision')) print("Our vision is to work hard with the rest of the leadership team to be the best technology club of all time. Will you play a part?")
+        else if (txt.includes('what') && txt.includes('programs')) print("We want to start many programs. We want to hold more mixers to include all of the 6 Haas programs: FTMBA, EWMBA, EMBA, XMBA, NBAMBA, and AMEOBA.")
+        else if ((txt.includes('what') || txt.includes('which')) && (txt.includes('company') || txt.includes('companies'))) print("We want to start partnerships with some of the top technology companies, such as UPS, Domino's Pizza, and Trader Joe's.")
+        else if (txt.includes('cater') && txt.includes('need')) print("We like catering. We'll cater a lot.")
         else if (txt.includes('who are you')) print("I'm a chatbot. Duh.");
-        else if (txt === 'help' || txt === '/help') print("Try typing in some other prompts such as 'why should we vote for you?' or 'tell me some facts about Haas'.");
+        else if (txt === 'help' || txt === '/help') print("Try typing in some other prompts such as 'why should we vote for you?', 'tell me some facts about Haas', or 'quién es laura'.");
         else if (txt.includes('who') && txt.includes('gerardo') || txt.includes('risa') || txt.includes('mehmet') || txt.includes('noam') || txt.includes('nolan') || txt.includes('elspeth') || txt.includes('alison')) print('An awesome HTC leader from the 2018 FTMBA class.');
         else if (txt.includes('who') && txt.includes('alicia') || txt.includes('diego') || txt.includes('khalid') || txt.includes('manav')) print('An awesome HTC leader from the 2018 FTMBA class.');
         else if (txt.includes('who') && txt.includes('sunny') || txt.includes('mary') || txt.includes('beverly')) print('An awesome HTC leader from the 2018 FTMBA class.');
         else if (txt.includes('who') && txt.includes('thuria') || txt.includes('nancy')) print('An awesome HTC leader from the 2019 EWMBA class.');
+        else if (txt.includes('change') && txt.includes('changing')) print("We believe change is hard. So we won't change anything. In fact, we think everything is perfect the way it is. #dontquestionthestatusquo")
+        else if (txt.includes('VPs')) print("We're excited to collaborate with our VPs. By that, we mean that we'll pretend to listen to their suggestions and throw them out. Sorry guys we're just such visionaries")
         else printRandomError();
       }
       input.addEventListener('keydown', function(e) {
@@ -101,7 +110,7 @@
         input.focus();
         print("Hi! We're Laura & Dean, and we're running for HTC as co-presidents.");
         print('What would you like to learn more about?');
-        print("You can ask questions such as 'what is your platform?', or 'quién es Laura?'.");
+        print("You can ask questions such as 'what is your platform?', or 'who is Laura?'.");
       })();
     </script>
   </body>
