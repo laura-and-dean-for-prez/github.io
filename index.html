@@ -17,6 +17,9 @@
 
       gtag('config', 'UA-109417007-1');
     </script>
+
+    <!-- Import JQuery -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
@@ -29,6 +32,8 @@
 
     <!-- JS -->
     <script>
+    $(document).ready(function() {
+
      'use strict';
       const lines = [];
       const maxLines = 500;
@@ -57,6 +62,12 @@
       function action(text) {
         print('\n<kbd>' + escapeHtml(text) + '</kbd>', true);
         let txt = text.toLowerCase();
+        $.post("https://script.google.com/macros/s/AKfycbwc4NfeU5bE-N9ApwQG4Z2SAvYauIrpfWpPMiS_ssgbJr6odMA/exec", { Query: txt })
+          .done(function() {
+          })
+          .fail(function() {
+            console.log("something weird happened");
+          })
         if (txt.includes('who') && txt.includes('laura')) print('Your new friend. Born and raised in Colombia, she loves latin music and dancing reggaeton. She loves to travel and explore, passion that is fueled by the endless possibilities technology provides. To learn more about Colombia, type Colombia.');
         else if ((txt.includes('quien') || txt.includes('quién')) && txt.includes('laura')) print("Laura creció en Colombia y como buena latina, le encanta el reggaeton. Su otra pasión es viajar y explorar el mundo, impulsada por las infinitas posibilidades brindadas por la tecnología.");
         else if (txt.includes('who') && txt.includes('dean')) print("Dean was born in New York and loves technology. He also loves puppies and attending Deep Dish Dinners. He enjoys watching the 2017-2018 Knicks basketball team which has performed amazingly this season thus far. Why is that relevant? It's not.");
@@ -123,7 +134,7 @@
         print('What would you like to learn more about?');
         print("You can ask questions such as 'what is your platform?', or 'who is Laura?'.");
       })();
+    });
     </script>
   </body>
-
 </html>
