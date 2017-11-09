@@ -68,21 +68,21 @@
         else if (txt === 'what is this' || txt === 'what is this?' || txt === "what's this") print("This is something Laura and Dean built to tell you about their awesome campaign.");
         else if (txt.includes('how are you')) print("Thanks for asking! I'm stuck in this box but otherwise doing well.")
         else if (txt.includes('haas') && txt.includes('facts')) print("Never thought you'd ask! Berkeley Haas was founded in 1898, as the first US business school at a public university. We currently have over 2,200 students over 6 degree programs.")
-        else if (txt.includes('what') && txt.includes('blockchain')) print("Blockchain is a very strong chain of lego blocks. Most often they come in primary colors.")
-        else if (txt.includes('what') && (txt.includes('ml') || txt.includes('machine learning'))) print("Machine learning is how machines learn things and help us #questionthestatusquo.")
-        else if (txt.includes('what') && txt.includes('vision')) print("Our vision is to work hard with the rest of the leadership team to be the best technology club of all time. Will you play a part?")
-        else if (txt.includes('what') && txt.includes('programs')) print("We want to start many programs. We want to hold more mixers to include all of the 6 Haas programs: FTMBA, EWMBA, EMBA, XMBA, NBAMBA, and AMEOBA.")
-        else if ((txt.includes('what') || txt.includes('which')) && (txt.includes('company') || txt.includes('companies'))) print("We want to start partnerships with some of the top technology companies, such as UPS, Domino's Pizza, and Trader Joe's.")
-        else if (txt.includes('cater') && txt.includes('need')) print("We like catering. We'll cater a lot.")
+        else if (txt.includes('what') && txt.includes('blockchain')) print("Blockchain is a very strong chain of lego blocks. Most often they come in primary colors.");
+        else if (txt.includes('what') && (txt.includes('ml') || txt.includes('machine learning'))) print("Machine learning is how machines learn things and help us #questionthestatusquo.");
+        else if (txt.includes('what') && txt.includes('vision')) print("Our vision is to work hard with the rest of the leadership team to be the best technology club of all time. Will you play a part?");
+        else if (txt.includes('what') && txt.includes('programs')) print("We want to start many programs. We want to hold more mixers to include all of the 6 Haas programs: FTMBA, EWMBA, EMBA, XMBA, NBAMBA, and AMEOBA.");
+        else if ((txt.includes('what') || txt.includes('which')) && (txt.includes('company') || txt.includes('companies'))) print("We want to start partnerships with some of the top technology companies, such as UPS, Domino's Pizza, and Trader Joe's.");
+        else if (txt.includes('cater') && txt.includes('need')) print("We like catering. We'll cater a lot.");
         else if (txt.includes('who are you')) print("I'm a chatbot. Duh.");
         else if (txt === 'help' || txt === '/help') print("Try typing in some other prompts such as 'why should we vote for you?', 'tell me some facts about Haas', or 'quién es laura'.");
         else if (txt.includes('who') && txt.includes('gerardo') || txt.includes('risa') || txt.includes('mehmet') || txt.includes('noam') || txt.includes('nolan') || txt.includes('elspeth') || txt.includes('alison')) print('An awesome HTC leader from the 2018 FTMBA class.');
         else if (txt.includes('who') && txt.includes('alicia') || txt.includes('diego') || txt.includes('khalid') || txt.includes('manav')) print('An awesome HTC leader from the 2018 FTMBA class.');
         else if (txt.includes('who') && txt.includes('sunny') || txt.includes('mary') || txt.includes('beverly')) print('An awesome HTC leader from the 2018 FTMBA class.');
         else if (txt.includes('who') && txt.includes('thuria') || txt.includes('nancy')) print('An awesome HTC leader from the 2019 EWMBA class.');
-        else if (txt.includes('change') && txt.includes('changing')) print("We believe change is hard. So we won't change anything. In fact, we think everything is perfect the way it is. #dontquestionthestatusquo")
-        else if (txt.includes('continue') && (txt.includes('to do') || txt.includes('doing')) print("We believe change is hard. So we'll continue doing everything. In fact, we think everything is perfect the way it is. #dontquestionthestatusquo")
-        else if (txt.includes('vps')) print("We're excited to collaborate with our VPs. By that, we mean that we'll pretend to listen to their suggestions and throw them out. Sorry guys we're just such visionaries")
+        else if (txt.includes('change') && txt.includes('changing')) print("We believe change is hard. So we won't change anything. In fact, we think everything is perfect the way it is. #dontquestionthestatusquo");
+        else if (txt.includes('continue') && (txt.includes('to do') || txt.includes('doing'))) print("We believe change is hard. So we'll continue doing everything. In fact, we think everything is perfect the way it is. #dontquestionthestatusquo");
+        else if (txt.includes('vps')) print("We're excited to collaborate with our VPs. By that, we mean that we'll pretend to listen to their suggestions and throw them out. Sorry guys we're just such visionaries");
         else printRandomError();
       }
       input.addEventListener('keydown', function(e) {
