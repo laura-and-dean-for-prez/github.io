@@ -88,7 +88,7 @@
         else if (txt === 'where' || txt === 'where?') print("At the best business school in the world.");
         else if (txt === 'htc') print("Also known as the Haas Technology Club.");
         else if (txt === 'hello' || txt === 'hi' || txt === 'hola' || txt === 'hello!' || txt === 'hi!') print("Hey there!");
-        else if (txt === 'who made this' || txt === 'who made this?') print("Laura and Dean created this.");
+        else if (txt.includes('who') && (txt.includes('built') || txt.includes('made'))) print("Laura and Dean created this.");
         else if (txt === 'what is this' || txt === 'what is this?' || txt === "what's this") print("This is something Laura and Dean built to tell you about their awesome campaign.");
         else if (txt.includes('how are you')) print("Thanks for asking! I'm stuck in this box but otherwise doing well.")
         else if (txt.includes('haas') && txt.includes('facts')) print("Never thought you'd ask! Berkeley Haas was founded in 1898, as the first US business school at a public university. We currently have over 2,200 students over 6 degree programs.")
